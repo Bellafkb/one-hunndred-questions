@@ -1,0 +1,7 @@
+English:
+Create (title)
+You haven't created any questions yet.
+
+German:
+Erstellen (Titel)
+Du hast noch keine Fragen hinzugefügt.

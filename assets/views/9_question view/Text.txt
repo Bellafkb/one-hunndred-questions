@@ -1,0 +1,23 @@
+English:
+
+Button:
+Next Question
+
+Quit View:
+Are you sure?
+You’ll be sent back to the home screen
+Cancel
+Yes
+
+--------------------
+
+German:
+
+Button:
+Nächste Frage
+
+Quit View:
+Bist du dir sicher?
+Du wirst zum Startbildschirm zurückkehren
+Nein
+Ja

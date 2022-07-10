@@ -1,0 +1,13 @@
+English:
+
+How would you like to proceed ?
+MORE QUESTIONS (Button)
+THE END (Button)
+
+--------------------
+
+German:
+
+Wie möchtest du fortsetzen ?
+MEHR FRAGEN
+ENDE

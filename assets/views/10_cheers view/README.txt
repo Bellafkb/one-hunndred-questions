@@ -1,0 +1,3 @@
+README
+
+* "EVERYBODY GETS A PENALTY" has a shadow

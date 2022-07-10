@@ -1,0 +1,4 @@
+Play:		play
+Create:		create
+Language: 	language
+Rules:		rules
