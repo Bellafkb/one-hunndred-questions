@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { nextButtonColor } from "../cssColors";
 import { Ionicons } from "@expo/vector-icons";
+import family from "../assets/questions/free/family.json"
+import saucy from "../assets/questions/free/saucy.json"
 
 export default function MatchScreen({ navigation }) {
   const [index, setIndex] = useState(0);
@@ -16,22 +18,21 @@ export default function MatchScreen({ navigation }) {
             justifyContent: "space-between"
           }}
         >
-          <Ionicons name="arrow-back" size={24} color="black" />
           <Ionicons name="list" size={24} color="black" />
           <Ionicons name="close-circle" size={24} color="black" />
         </View>
         <Text style={{ fontSize: 16 }}>
-          {index + 1}/{questions.length}
+          {index + 1}/{saucy.length}
         </Text>
       </View>
       <View style={styles.topComponent}>
-        <Text style={styles.upperText}>{questions[index]}</Text>
+        <Text style={styles.upperText}>{saucy[index]}</Text>
       </View>
       <View style={styles.bottomComponent}>
         <TouchableOpacity
           style={styles.nextButton}
           onPress={() =>
-            questions.length - 1 === index
+            saucy.length - 1 === index
               ? navigation.navigate("Home")
               : setIndex(index + 1)
           }
@@ -68,7 +69,9 @@ const styles = StyleSheet.create({
     fontWeight: "800",
     fontSize: 30,
     textAlign: "center",
-    color: "#444"
+    color: "#444",
+    padding: 25
+
   },
   bottomComponent: {
     alignItems: "center",
@@ -89,7 +92,4 @@ const styles = StyleSheet.create({
   }
 });
 
-const questions = [
-  "Who gets the most dates on Tinder?",
-  "Why so many homeless?"
-];
+
