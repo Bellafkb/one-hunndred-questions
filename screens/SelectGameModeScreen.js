@@ -2,10 +2,8 @@ import React, { useState } from "react";
 import {
   StyleSheet,
   Text,
-  Image,
   View,
   TouchableOpacity,
-  ScrollView,
   Dimensions,
   ImageBackground,
 } from "react-native";
@@ -13,20 +11,8 @@ import Carousel from "react-native-snap-carousel";
 import { nextButtonColor } from "../cssColors";
 export const SLIDER_WIDTH = Dimensions.get("window").width + 80;
 export const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.7);
-const CarouselCardItem = ({ item, index }) => {
-  const imgUrl = item.imgUrl;
-  return (
-    <View style={styles.card} key={index}>
-      <ImageBackground source={imgUrl} resizeMode="cover" style={styles.image}>
-        <Text style={styles.header}>{item.title}</Text>
-        <Text style={styles.body}>{item.body}</Text>
-      </ImageBackground>
-    </View>
-  );
-};
 
 export default function MatchScreen({ navigation }) {
-  const [index, setIndex] = useState(0);
   const data = [
     {
       title: "Random",
@@ -50,6 +36,24 @@ export default function MatchScreen({ navigation }) {
     },
   ];
   const isCarousel = React.useRef(null);
+  const [mode, setMode] = useState(0);
+  const CarouselCardItem = ({ item, index }) => {
+    const imgUrl = item.imgUrl;
+
+    return (
+      <View style={styles.card} key={index}>
+        <ImageBackground
+          source={imgUrl}
+          resizeMode="cover"
+          style={styles.image}
+        >
+          <Text style={styles.header}>{item.title}</Text>
+          <Text style={styles.body}>{item.body}</Text>
+        </ImageBackground>
+      </View>
+    );
+  };
+
   return (
     <View style={styles.container}>
       <Carousel
@@ -62,10 +66,11 @@ export default function MatchScreen({ navigation }) {
         itemWidth={ITEM_WIDTH}
         inactiveSlideShift={0}
         useScrollView={true}
+        onSnapToItem={(index) => setMode(index)}
       />
       <TouchableOpacity
         style={styles.nextButton}
-        onPress={() => navigation.navigate("MatchScreen")}
+        onPress={() => navigation.navigate("MatchScreen", { mode })}
       >
         <Text style={styles.body}>START</Text>
       </TouchableOpacity>
@@ -96,7 +101,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     width: "100%",
 
-    height: 650,
+    height: "90%",
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
@@ -133,33 +138,3 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
 });
-
-{
-  /* <View style={styles.headerComponent}></View>
-      <ScrollView horizontal style={{ height: "70%" }}>
-        {modes.map(mode => (
-          <View
-            style={{
-              ...styles.topComponent,
-              backgroundColor: mode.backgroundColor,
-              margin: 10
-            }}
-          >
-            <FontAwesome5 name={mode.icon} size={100} color="#fff" />
-            <Text style={{ fontSize: 40, color: "#fff" }}>{mode.header}</Text>
-            <Text style={{ fontSize: 16, color: "#fff", textAlign: "center" }}>
-              {mode.content}
-            </Text>
-          </View>
-        ))}
-      </ScrollView>
-
-      <View style={styles.bottomComponent}>
-        <TouchableOpacity
-          style={styles.nextButton}
-          onPress={() => navigation.navigate("MatchScreen")}
-        >
-          <Text style={styles.innerButton}>START</Text>
-        </TouchableOpacity>
-      </View> */
-}

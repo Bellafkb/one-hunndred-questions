@@ -1,9 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
 import { nextButtonColor, shadow } from "../cssColors";
 import { Entypo } from "@expo/vector-icons";
 
 export default function MatchScreen({ navigation }) {
+  const create_icon = require("../assets/views/2_main_menu/imgs/buttons/create.png");
+  const language_icon = require("../assets/views/2_main_menu/imgs/buttons/language.png");
+
+  const rules_icon = require("../assets/views/2_main_menu/imgs/buttons/rules.png");
+  const start_icon = require("../assets/views/2_main_menu/imgs/buttons/start.png");
+
   return (
     <View style={styles.container}>
       <View style={styles.headerComponent}>
@@ -17,8 +23,10 @@ export default function MatchScreen({ navigation }) {
             marginTop: 20,
             marginRight: 20,
             borderWidth: 1,
-            padding: 5,
-            alignItems: "center"
+            padding: 10,
+            alignItems: "center",
+            alignContent: "center",
+            justifyContent: "center",
           }}
           onPress={() => navigation.navigate("SocialMediaScreen")}
         >
@@ -61,62 +69,98 @@ export default function MatchScreen({ navigation }) {
             style={styles.bottomItem}
             onPress={() => navigation.navigate("SelectGameModeScreen")}
           >
-            <Image
-              source={require("../assets/play.png")}
-              style={{ width: "90%", height: "80%" }}
-              resizeMode="contain"
-            />
-            <Text
-              style={{ fontWeight: "bold", fontSize: 16, textAlign: "center" }}
-            >
-              Play
-            </Text>
+            <View style={{ flexDirection: "column" }}>
+              <View style={styles.circle}>
+                <Image
+                  source={start_icon}
+                  style={{ width: 70, height: 70 }}
+                  resizeMode="contain"
+                />
+              </View>
+
+              <Text
+                style={{
+                  fontWeight: "bold",
+                  fontSize: 16,
+                  textAlign: "center",
+                }}
+              >
+                Add
+              </Text>
+            </View>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.bottomItem}
             onPress={() => navigation.navigate("AddQuestionScreen")}
           >
-            <Image
-              source={require("../assets/add.png")}
-              style={{ width: "90%", height: "80%" }}
-              resizeMode="contain"
-            />
-            <Text
-              style={{ fontWeight: "bold", fontSize: 16, textAlign: "center" }}
-            >
-              Add
-            </Text>
+            <View style={{ flexDirection: "column" }}>
+              <View style={styles.circle}>
+                <Image
+                  source={create_icon}
+                  style={{ width: 70, height: 70 }}
+                  resizeMode="contain"
+                />
+              </View>
+
+              <Text
+                style={{
+                  fontWeight: "bold",
+                  fontSize: 16,
+                  textAlign: "center",
+                }}
+              >
+                Language
+              </Text>
+            </View>
           </TouchableOpacity>
 
           <TouchableOpacity
             style={styles.bottomItem}
             onPress={() => navigation.navigate("TutorialScreen")}
           >
-            <Image
-              source={require("../assets/rules.png")}
-              style={{ width: "90%", height: "80%" }}
-              resizeMode="contain"
-            />
-            <Text
-              style={{ fontWeight: "bold", fontSize: 16, textAlign: "center" }}
-            >
-              Rules
-            </Text>
+            <View style={{ flexDirection: "column" }}>
+              <View style={styles.circle}>
+                <Image
+                  source={rules_icon}
+                  style={{ width: 70, height: 70 }}
+                  resizeMode="contain"
+                />
+              </View>
+
+              <Text
+                style={{
+                  fontWeight: "bold",
+                  fontSize: 16,
+                  textAlign: "center",
+                }}
+              >
+                Language
+              </Text>
+            </View>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.bottomItem}
             onPress={() => navigation.navigate("LanguageScreen")}
           >
-            <Image
-              source={require("../assets/language.png")}
-              style={{ width: "90%", height: "80%" }}
-              resizeMode="contain"
-            />
-            <Text
-              style={{ fontWeight: "bold", fontSize: 16, textAlign: "center" }}
-            >
-              Language
-            </Text>
+            <View style={{ flexDirection: "column" }}>
+              <View style={styles.circle}>
+                <Image
+                  source={language_icon}
+                  style={{ width: 70, height: 70 }}
+                  resizeMode="contain"
+                />
+              </View>
+
+              <Text
+                style={{
+                  fontWeight: "bold",
+                  fontSize: 16,
+                  textAlign: "center",
+                }}
+              >
+                Language
+              </Text>
+            </View>
           </TouchableOpacity>
         </View>
       </View>
@@ -128,15 +172,15 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: "column",
-    justifyContent: "space-between",
+    justifyContent: "space-evenly",
     backgroundColor: "#fff",
-    padding: 10
+    padding: 15,
   },
   headerComponent: {
     alignItems: "center",
     justifyContent: "space-between",
     height: "10%",
-    flexDirection: "row"
+    flexDirection: "row",
   },
   topComponent: {
     flex: 1,
@@ -145,7 +189,7 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
     flexWrap: "wrap",
     height: "35%",
-    width: "100%"
+    width: "100%",
   },
   topItem: {
     alignItems: "center",
@@ -154,7 +198,7 @@ const styles = StyleSheet.create({
     height: "35%",
     alignItems: "center",
     padding: 10,
-    margin: 10
+    margin: 10,
   },
   bottomItem: {
     alignItems: "center",
@@ -165,13 +209,13 @@ const styles = StyleSheet.create({
     padding: 20,
     margin: 10,
     borderRadius: 6,
-    ...shadow
+    borderWidth:0.5
   },
   upperText: {
     fontWeight: "800",
     fontSize: 25,
     textAlign: "center",
-    color: "#444"
+    color: "#444",
   },
   bottomComponent: {
     flex: 1,
@@ -180,23 +224,31 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
     flexWrap: "wrap",
     height: "30%",
-    width: "100%"
+    width: "100%",
   },
   nextButton: {
     backgroundColor: nextButtonColor,
     padding: 20,
     borderRadius: 10,
     width: 360,
-    alignItems: "center"
+    alignItems: "center",
   },
   innerButton: {
     color: "#fff",
     fontSize: 18,
-    fontWeight: "bold"
-  }
+    fontWeight: "bold",
+  },
+  circle: {
+    backgroundColor: "#444",
+    height: 80,
+    width: 80,
+    borderRadius: 80,
+    justifyContent: "center",
+    alignItems: "center",
+  },
 });
 
 const questions = [
   "Who gets the most dates on Tinder?",
-  "Why so many homeless?"
+  "Why so many homeless?",
 ];

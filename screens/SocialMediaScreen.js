@@ -20,10 +20,10 @@ export default function TutorialScreen() {
         <Text style={styles.contentText}>Twitter</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.socialItem}>
+      {/* <TouchableOpacity style={styles.socialItem}>
         <FontAwesome name="podcast" size={24} color="black" />
         <Text style={styles.contentText}>Podcast</Text>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
       <TouchableOpacity style={styles.socialItem}>
         <FontAwesome5 name="readme" size={24} color="black" />
         <Text style={styles.contentText}>Acknolegements</Text>
