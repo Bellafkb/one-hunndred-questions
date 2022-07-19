@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
 import { nextButtonColor, shadow } from "../cssColors";
 import { Entypo } from "@expo/vector-icons";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function MatchScreen({ navigation }) {
   const create_icon = require("../assets/views/2_main_menu/imgs/buttons/create.png");
@@ -9,6 +10,33 @@ export default function MatchScreen({ navigation }) {
 
   const rules_icon = require("../assets/views/2_main_menu/imgs/buttons/rules.png");
   const start_icon = require("../assets/views/2_main_menu/imgs/buttons/start.png");
+
+  const setLanguage = async () => {
+    await AsyncStorage.setItem("@100_q_language", "english");
+    console.log(await AsyncStorage.getItem("@100_q_language"));
+  };
+
+  useEffect(() => {
+    getLanguage()
+      .then((data) => data)
+      .then((value) => {
+        if (!value) setLanguage(value);
+      })
+      .catch((err) => console.log(err));
+  }, []);
+
+  const getLanguage = async () => {
+    // get Data from Storage
+    try {
+      const data = await AsyncStorage.getItem("@100_q_language");
+      if (data !== null) {
+        console.log(data);
+        return data;
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <View style={styles.container}>
@@ -18,12 +46,13 @@ export default function MatchScreen({ navigation }) {
         ></TouchableOpacity>
         <TouchableOpacity
           style={{
-            borderRadius: 20,
+            borderRadius: 40,
+            height: 40,
+            width: 40,
             backgroundColor: "#fff",
             marginTop: 20,
             marginRight: 20,
-            borderWidth: 1,
-            padding: 10,
+            borderWidth: 0.5,
             alignItems: "center",
             alignContent: "center",
             justifyContent: "center",
@@ -85,7 +114,7 @@ export default function MatchScreen({ navigation }) {
                   textAlign: "center",
                 }}
               >
-                Add
+                Play
               </Text>
             </View>
           </TouchableOpacity>
@@ -109,7 +138,7 @@ export default function MatchScreen({ navigation }) {
                   textAlign: "center",
                 }}
               >
-                Language
+                Add
               </Text>
             </View>
           </TouchableOpacity>
@@ -134,7 +163,7 @@ export default function MatchScreen({ navigation }) {
                   textAlign: "center",
                 }}
               >
-                Language
+                Rules
               </Text>
             </View>
           </TouchableOpacity>
@@ -209,7 +238,7 @@ const styles = StyleSheet.create({
     padding: 20,
     margin: 10,
     borderRadius: 6,
-    borderWidth:0.5
+    borderWidth: 0.5,
   },
   upperText: {
     fontWeight: "800",

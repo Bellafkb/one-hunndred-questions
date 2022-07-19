@@ -10,7 +10,7 @@ import SocialMediaScreen from "./screens/SocialMediaScreen";
 import StartScreen from "./screens/StartScreen";
 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-
+import LoginScreen from "./screens/LoginScreen.js";
 import { NavigationContainer } from "@react-navigation/native";
 
 const Stack = createNativeStackNavigator();
@@ -33,32 +33,37 @@ export default function App() {
         <Stack.Screen
           name="SelectGameModeScreen"
           component={SelectGameModeScreen}
-          options={{ title: "SelectGameModeScreen", headerShown: false }}
+          options={{ headerShown: false }}
         />
         <Stack.Screen
           name="MatchScreen"
           component={MatchScreen}
-          options={{ title: "MatchScreen", headerShown: false }}
+          options={{ headerShown: false }}
         />
         <Stack.Screen
           name="TutorialScreen"
           component={TutorialScreen}
-          options={{ title: "TutorialScreen", headerShown: false }}
+          options={{ title: "Tutorial", headerShown: false }}
         />
         <Stack.Screen
           name="AddQuestionScreen"
           component={AddQuestionScreen}
-          options={{ title: "AddScreen" }}
+          options={{ title: "Add Questions" }}
         />
         <Stack.Screen
           name="LanguageScreen"
           component={LanguageScreen}
-          options={{ title: "TutorialScreen" }}
+          options={{ title: "Languages" }}
         />
         <Stack.Screen
           name="SocialMediaScreen"
           component={SocialMediaScreen}
-          options={{ title: "SocialMediaScreen" }}
+          options={{ title: "Social Media" }}
+        />
+        <Stack.Screen
+          name="LoginScreen"
+          component={LoginScreen}
+          options={{ title: "Sign in" }}
         />
       </Stack.Navigator>
     </NavigationContainer>
