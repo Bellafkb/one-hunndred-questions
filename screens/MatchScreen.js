@@ -7,6 +7,7 @@ import {
   Modal,
   Pressable,
 } from "react-native";
+import ConfettiCannon from 'react-native-confetti-cannon';
 import { nextButtonColor } from "../cssColors";
 import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 import family from "../assets/questions/family_eng.json";
@@ -143,6 +144,7 @@ const AllDrinkModal = ({ showEverybodyDrinks, setShowEveryBodydrinks }) => {
       visible={showEverybodyDrinks}
     >
       <View style={{ flex: 1 }}>
+      <ConfettiCannon count={200} origin={{x: -10, y: 0}} />
         <View
           style={{ flex: 1, alignContent: "center", justifyContent: "center" }}
         >

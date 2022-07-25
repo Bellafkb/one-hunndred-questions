@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {
   StyleSheet,
   Text,
@@ -8,29 +8,63 @@ import {
   ScrollView,
 } from "react-native";
 import { nextButtonColor } from "../cssColors";
-import { Entypo, Ionicons } from "@expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons";
+import axios from "axios";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { AuthContext } from "../context/AuthContext";
 
 export default function TutorialScreen({ navigation }) {
+  const [state, setstate] = useState();
+  const [isLoading, setIsLoading] = useState();
+
+  const fetchQuestions = async () => {
+    try {
+      const access_token = await AsyncStorage.getItem("access_token");
+      const { data } = await axios.get(
+        "https://i312ipsw5a.execute-api.eu-central-1.amazonaws.com/api/questions/by_username",
+        {
+          headers: {
+            Authorization: `Bearer ${access_token}`,
+            client_id: "a09ds8a0d8a08a09s8d",
+          },
+        }
+      );
+      console.log(data);
+      setstate(data.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchQuestions();
+    return () => {};
+  }, []);
+
+  const { userInfo } = useContext(AuthContext);
+
   return (
     <View style={styles.container}>
-      <View style={styles.bot}>
-        <Text style={{ textAlign: "center", fontSize: 20 }}>
-          no questions created yet
-        </Text>
-      </View>
-      {/* <ScrollView>
-        {[1, 23, 45, 6, 6, 6, 6, 6].map(() => (
-          <View style={styles.message}>
-            <Text style={{ color: "#0e566c" }}>
-              Created 1 day ago
-            </Text>
-            <Text style={{ color: "#0e566c" }}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam et
-              fermentum dui. Ut orci quam, ornare sed lorem sed, hendrerit.
-            </Text>
-          </View>
-        ))}
-      </ScrollView> */}
+      {isLoading && !state && (
+        <View style={styles.bot}>
+          <Text style={{ textAlign: "center", fontSize: 20 }}>
+            no questions created yet
+          </Text>
+        </View>
+      )}
+      <ScrollView style={{ width: "100%", padding: 14 }}>
+        {state &&
+          state.map((item) => (
+            <View style={styles.message}>
+              <Text style={{ color: "#0e566c" }}>
+                {new Date(item.created_at).toISOString()}
+              </Text>
+              <Text style={{ color: "#0e566c", fontSize: 18 }}>
+                {item.english}
+              </Text>
+            </View>
+          ))}
+      </ScrollView>
       <View
         style={{
           width: "100%",
@@ -40,7 +74,9 @@ export default function TutorialScreen({ navigation }) {
       >
         <TouchableOpacity
           style={styles.addButton}
-          onPress={() => navigation.navigate("LoginScreen")}
+          onPress={() =>
+            navigation.navigate(userInfo ? "QuestionsForm" : "LoginScreen")
+          }
         >
           <Ionicons name="ios-add-outline" size={30} color="#fff" />
         </TouchableOpacity>
@@ -52,12 +88,14 @@ export default function TutorialScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    width: "100%",
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: "#fff",
   },
   message: {
-    width: "98%",
+    width: "100%",
     flexDirection: "column",
     justifyContent: "flex-start",
     padding: 14,

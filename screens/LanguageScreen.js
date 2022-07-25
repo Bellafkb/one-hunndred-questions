@@ -1,53 +1,28 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useContext, useEffect, useMemo, useState } from "react";
 import { StyleSheet, View, TouchableOpacity, Image, Text } from "react-native";
 import { nextButtonColor } from "../cssColors";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { LocalizationContext } from "../context/LocalizationContext";
 
 export default function TutorialScreen() {
+  const { i18n, setLocale, locale } = useContext(LocalizationContext);
   const england = require("../assets/views/6_language/imgs/english_filled/EnglandC_100.png");
   const england_empty = require("../assets/views/6_language/imgs/english_empty/EnglandBW_100.png");
 
   const germany = require("../assets/views/6_language/imgs/german_filled/DeutschlandC_100.png");
   const germany_empty = require("../assets/views/6_language/imgs/german_empty/DeutschlandBW_100.png");
 
-  const storeLanguage = async (language) => {
-    await AsyncStorage.setItem("@100_q_language", language);
-    setLanguage(language);
-  };
-
-  const [language, setLanguage] = useState();
-  const getLanguage = async () => {
-    // get Data from Storage
-    try {
-      const data = await AsyncStorage.getItem("@100_q_language");
-      if (data !== null) {
-        console.log(data);
-        return data;
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  useMemo(
-    () =>
-      getLanguage()
-        .then((data) => data)
-        .then((value) => {
-          setLanguage(value);
-          return value;
-        })
-        .catch((err) => console.log(err)),
-    []
-  );
+  // Set the key-value pairs for the different languages you want to support.
 
   return (
     <View style={styles.container}>
       <View style={{ flexDirection: "row", justifyContent: "center" }}>
         <View style={{ flexDirection: "column", alignItems: "center" }}>
-          <Text style={{ fontSize: 20 }} >{"German"}</Text>
+          <Text style={{ fontSize: 20 }}>{"German"}</Text>
           <TouchableOpacity
-            onPress={() => storeLanguage("german")}
+            onPress={() => {
+              setLocale("de");
+            }}
             style={{
               alignItems: "center",
               justifyContent: "center",
@@ -59,7 +34,7 @@ export default function TutorialScreen() {
             }}
           >
             <Image
-              source={language === "german" ? germany : germany_empty}
+              source={locale === "de" ? germany : germany_empty}
               resizeMode="contain"
               style={{ height: 60 }}
             />
@@ -68,7 +43,9 @@ export default function TutorialScreen() {
         <View style={{ flexDirection: "column", alignItems: "center" }}>
           <Text style={{ fontSize: 20 }}>English</Text>
           <TouchableOpacity
-            onPress={() => storeLanguage("english")}
+            onPress={() => {
+              setLocale("en");
+            }}
             style={{
               alignItems: "center",
               justifyContent: "center",
@@ -80,7 +57,7 @@ export default function TutorialScreen() {
             }}
           >
             <Image
-              source={language === "english" ? england : england_empty}
+              source={locale === "en" ? england : england_empty}
               resizeMode="contain"
               style={{ height: 60 }}
             />

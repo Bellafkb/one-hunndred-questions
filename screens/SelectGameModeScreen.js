@@ -1,3 +1,4 @@
+import { AntDesign } from "@expo/vector-icons";
 import React, { useState } from "react";
 import {
   StyleSheet,
@@ -7,6 +8,7 @@ import {
   Dimensions,
   ImageBackground,
 } from "react-native";
+
 import Carousel from "react-native-snap-carousel";
 import { nextButtonColor } from "../cssColors";
 export const SLIDER_WIDTH = Dimensions.get("window").width + 80;
@@ -56,6 +58,17 @@ export default function MatchScreen({ navigation }) {
 
   return (
     <View style={styles.container}>
+      <View style={styles.ScreenHeader}>
+        <TouchableOpacity onPress={() => navigation.navigate("Home")}>
+          <AntDesign name="close" size={24} color="black" />
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.newModeButton}>
+          <Text style={styles.newModeButtonInner}>New Mode</Text>
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <AntDesign name="question" size={24} color="black" />
+        </TouchableOpacity>
+      </View>
       <Carousel
         layout="tinder"
         layoutCardOffset={9}
@@ -72,20 +85,32 @@ export default function MatchScreen({ navigation }) {
         style={styles.nextButton}
         onPress={() => navigation.navigate("MatchScreen", { mode })}
       >
-        <Text style={styles.body}>START</Text>
+        <Text style={styles.innerButton}>START</Text>
       </TouchableOpacity>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+  newModeButton: {
+    backgroundColor: "#C42E2B",
+    padding: 10,
+    borderRadius: 5,
+    width: "40%",
+    alignItems: "center",
+  },
+  newModeButtonInner: {
+    color: "#fff",
+
+    fontSize: 16,
+  },
   container: {
     flex: 1,
     backgroundColor: "white",
     borderRadius: 8,
     width: "100%",
     alignItems: "center",
-    padding: 100,
+    marginTop: 10,
     paddingBottom: 40,
     shadowColor: "#000",
     shadowOffset: {
@@ -95,6 +120,15 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.29,
     shadowRadius: 4.65,
     elevation: 7,
+  },
+  ScreenHeader: {
+    alignItems: "center",
+    justifyContent: "space-between",
+
+    width: "100%",
+    marginTop: 20,
+    flexDirection: "row",
+    padding: 20,
   },
   card: {
     backgroundColor: "white",
@@ -124,17 +158,22 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
     paddingTop: 20,
   },
-  body: {
-    color: "#fff",
-    fontSize: 18,
-    textAlign: "center",
-    padding: 10,
-  },
   nextButton: {
     backgroundColor: nextButtonColor,
     padding: 20,
     borderRadius: 10,
-    width: 350,
+    width: 360,
     alignItems: "center",
+  },
+  innerButton: {
+    color: "#fff",
+    fontSize: 18,
+    fontWeight: "bold",
+  },
+  body: {
+    color: "#fff",
+    fontSize: 18,
+    fontWeight: "bold",
+    textAlign: "center"
   },
 });

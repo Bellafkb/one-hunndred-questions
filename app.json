@@ -1,8 +1,9 @@
 {
   "expo": {
-    "name": "react-native-drinking-game",
-    "slug": "react-native-drinking-game",
+    "name": "100-questions",
+    "slug": "100-questions",
     "version": "1.0.0",
+    "scheme": "one-hundred-questions",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -18,14 +19,16 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.b.bellafkir.one.hundred.questions"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
+         "backgroundColor": "#FFFFFF"
       },
-      "package": "com.b.bellafkir.reactnativedrinkinggame"
+      "package": "com.b.bellafkir.one.hundred.questions",
+      "versionCode": 1
     },
     "web": {
       "favicon": "./assets/favicon.png"

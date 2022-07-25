@@ -1,8 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
 import { nextButtonColor, shadow } from "../cssColors";
-import { Entypo } from "@expo/vector-icons";
+import { Entypo, FontAwesome5 } from "@expo/vector-icons";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { AuthContext } from "../context/AuthContext";
+import { LocalizationContext } from "../context/LocalizationContext";
 
 export default function MatchScreen({ navigation }) {
   const create_icon = require("../assets/views/2_main_menu/imgs/buttons/create.png");
@@ -38,12 +40,46 @@ export default function MatchScreen({ navigation }) {
     }
   };
 
+  const { userInfo } = useContext(AuthContext);
+  const { i18n } = useContext(LocalizationContext);
+
+
   return (
     <View style={styles.container}>
       <View style={styles.headerComponent}>
-        <TouchableOpacity
-          style={{ borderRadius: 1, backgroundColor: "#fff" }}
-        ></TouchableOpacity>
+        {userInfo ? (
+          <TouchableOpacity
+            style={{
+              borderRadius: 40,
+              height: 40,
+              width: 40,
+              backgroundColor: "#fff",
+              marginTop: 20,
+              alignItems: "center",
+              alignContent: "center",
+              justifyContent: "center",
+            }}
+            onPress={() => navigation.navigate("ProfileScreen")}
+          >
+            <Image
+              source={{
+                uri: `https://ui-avatars.com/api/?rounded=true&name=${userInfo.name}&background=#F2AD40&color=#fff`,
+              }}
+              resizeMode="contain"
+              style={{ width: 40, height: 40 }}
+            />
+          </TouchableOpacity>
+        ) : (
+          <TouchableOpacity onPress={() => navigation.navigate("LoginScreen")}>
+            <FontAwesome5
+              name="user-circle"
+              size={40}
+              color="#444"
+              style={{ marginTop: 20 }}
+            />
+          </TouchableOpacity>
+        )}
+
         <TouchableOpacity
           style={{
             borderRadius: 40,
@@ -51,7 +87,7 @@ export default function MatchScreen({ navigation }) {
             width: 40,
             backgroundColor: "#fff",
             marginTop: 20,
-            marginRight: 20,
+
             borderWidth: 0.5,
             alignItems: "center",
             alignContent: "center",
@@ -99,7 +135,7 @@ export default function MatchScreen({ navigation }) {
             onPress={() => navigation.navigate("SelectGameModeScreen")}
           >
             <View style={{ flexDirection: "column" }}>
-              <View style={styles.circle}>
+              <View style={{ ...styles.circle, backgroundColor: "#55B6BD" }}>
                 <Image
                   source={start_icon}
                   style={{ width: 70, height: 70 }}
@@ -114,16 +150,20 @@ export default function MatchScreen({ navigation }) {
                   textAlign: "center",
                 }}
               >
-                Play
+                {i18n.t("play")}
               </Text>
             </View>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.bottomItem}
-            onPress={() => navigation.navigate("AddQuestionScreen")}
+            onPress={() =>
+              userInfo
+                ? navigation.navigate("AddQuestionScreen")
+                : navigation.navigate("LoginScreen")
+            }
           >
             <View style={{ flexDirection: "column" }}>
-              <View style={styles.circle}>
+              <View style={{ ...styles.circle, backgroundColor: "#324444" }}>
                 <Image
                   source={create_icon}
                   style={{ width: 70, height: 70 }}
@@ -138,7 +178,7 @@ export default function MatchScreen({ navigation }) {
                   textAlign: "center",
                 }}
               >
-                Add
+                {i18n.t("add")}
               </Text>
             </View>
           </TouchableOpacity>
@@ -148,7 +188,7 @@ export default function MatchScreen({ navigation }) {
             onPress={() => navigation.navigate("TutorialScreen")}
           >
             <View style={{ flexDirection: "column" }}>
-              <View style={styles.circle}>
+              <View style={{ ...styles.circle, backgroundColor: "#DC5927" }}>
                 <Image
                   source={rules_icon}
                   style={{ width: 70, height: 70 }}
@@ -163,7 +203,7 @@ export default function MatchScreen({ navigation }) {
                   textAlign: "center",
                 }}
               >
-                Rules
+             {i18n.t("rules")}
               </Text>
             </View>
           </TouchableOpacity>
@@ -172,7 +212,7 @@ export default function MatchScreen({ navigation }) {
             onPress={() => navigation.navigate("LanguageScreen")}
           >
             <View style={{ flexDirection: "column" }}>
-              <View style={styles.circle}>
+              <View style={{ ...styles.circle, backgroundColor: "#FDB050" }}>
                 <Image
                   source={language_icon}
                   style={{ width: 70, height: 70 }}
@@ -187,7 +227,7 @@ export default function MatchScreen({ navigation }) {
                   textAlign: "center",
                 }}
               >
-                Language
+                {i18n.t("language")}
               </Text>
             </View>
           </TouchableOpacity>
