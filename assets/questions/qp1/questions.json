@@ -1,0 +1,602 @@
+[
+    {
+        "english": "Who is the biggest hipster of the group ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer ist der gr\u00f6\u00dfte Hipster in der Gruppe ?"
+    },
+    {
+        "english": "Who will be a hipster parent ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer wird mal ein Hipster-Elternteil ?"
+    },
+    {
+        "english": "Who spends the most time watching Reels/TikToks ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer verbringt die meiste Zeit mit Reels/TikToks ?"
+    },
+    {
+        "english": "Who is the most cocky ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer ist besonders eingebildet ?"
+    },
+    {
+        "english": "Who will start an OnlyFans ?",
+        "category": "SAUCY",
+        "tag": "qp1",
+        "german": "Wer ein OnlyFans-Account starten ?"
+    },
+    {
+        "english": "Who is paying for an OnlyFans subscription ?",
+        "category": "SAUCY",
+        "tag": "qp1",
+        "german": "Wer zahlt f\u00fcr ein OnlyFans-Abo ?"
+    },
+    {
+        "english": "Who\u2019d be the most successful on OnlyFans ?",
+        "category": "SAUCY",
+        "tag": "qp1",
+        "german": "Wer w\u00e4re bei OnlyFans am erfolgreichsten ?"
+    },
+    {
+        "english": "Who is the biggest \u201cFriends\u201d (TV-show) fan ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer ist der/die gr\u00f6\u00dfte \"Friends\" (TV-Show) Fan ?"
+    },
+    {
+        "english": "Who wears T-Shirts with big logos ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer tr\u00e4gt T-Shirts mit gro\u00dfen Logos ?"
+    },
+    {
+        "english": "Who lost the most money on crypto ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer hat das meiste Geld mit Crypto verloren ?"
+    },
+    {
+        "english": "Who made the most money from crypto ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer hat das meiste Geld mit Crypto verdient ?"
+    },
+    {
+        "english": "Who can\u2019t shut up about crypto ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer spricht andauernd \u00fcber Crypto ?"
+    },
+    {
+        "english": "Who likes to talk about stuff they don\u2019t know anything about ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer redet gerne \u00fcber Dinge, von denen er/sie keine Ahnung hat ?"
+    },
+    {
+        "english": "Who can\u2019t tolerate silence ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer kann Stille nicht ertragen ?"
+    },
+    {
+        "english": "Who has the highest flirting success rate ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer hat die h\u00f6chste Erfolgsquote beim Flirten ?"
+    },
+    {
+        "english": "Who would get a joke tattoo ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer w\u00fcrde sich ein Scherz-Tattoo stechen lassen ?"
+    },
+    {
+        "english": "Who would let their friend choose a tattoo for them ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer w\u00fcrde sich von seinem/seiner Freundin ein Tattoo aussuchen lassen ?"
+    },
+    {
+        "english": "Who spends the most money on sex toys ?",
+        "category": "SAUCY",
+        "tag": "qp1",
+        "german": "Wer gibt das meiste Geld f\u00fcr Sexspielzeug aus ?"
+    },
+    {
+        "english": "Who would use a vibrator in public ?",
+        "category": "SAUCY",
+        "tag": "qp1",
+        "german": "Wer w\u00fcrde einen Vibrator in der \u00d6ffentlichkeit benutzen ?"
+    },
+    {
+        "english": "Who threw up on someone else before ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer hat schon einmal auf jemand anderes gekotzt ?"
+    },
+    {
+        "english": "Who would go up to the DJ in a club and ask them to play a specific song ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer w\u00fcrde in einem Club zum DJ gehen um einen bestimmten Song zu spielen ?"
+    },
+    {
+        "english": "Who has holes in their socks ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer hat L\u00f6cher in seinen Socken ?"
+    },
+    {
+        "english": "Who doesn't have a gag reflex ?",
+        "category": "SAUCY",
+        "tag": "qp1",
+        "german": "Wer hat keinen W\u00fcrgereflex ?"
+    },
+    {
+        "english": "Who is most prone to throw up ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer muss sich am h\u00e4ufigsten \u00fcbergeben ?"
+    },
+    {
+        "english": "Who sends only voice messages ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer verschickt nur Sprachnachrichten ?"
+    },
+    {
+        "english": "Who would like to be on a leash ?",
+        "category": "SAUCY",
+        "tag": "qp1",
+        "german": "Wer w\u00fcrde gerne an der Leine gef\u00fchrt werden ?"
+    },
+    {
+        "english": "Who gets horny the fastest ?",
+        "category": "SAUCY",
+        "tag": "qp1",
+        "german": "Wer wird am schnellsten geil ?"
+    },
+    {
+        "english": "Who masturbated last ?",
+        "category": "SAUCY",
+        "tag": "qp1",
+        "german": "Wer hat zuletzt masturbiert ?"
+    },
+    {
+        "english": "Whose breath smells ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wessen Atem riecht am schlechtesten ?"
+    },
+    {
+        "english": "Who would eat pasta with ketchup ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer w\u00fcrde (noch) Nudeln mit Ketchup essen ?"
+    },
+    {
+        "english": "Who will/did get in trouble for public urination ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer wird mal wegen Urinieren in der \u00d6ffentlichkeit in Schwierigkeiten geraten ?"
+    },
+    {
+        "english": "Who couldn\u2019t handle waxing ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer k\u00f6nnte eine Waxing-Session (z.B. f\u00fcr Beinbehaarung) nicht durchstehen ?"
+    },
+    {
+        "english": "Who shops at flea markets ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer kauft viel auf Flohm\u00e4rkten ein ?"
+    },
+    {
+        "english": "Who would be a sugar daddy/mommy ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer w\u00fcrde ein Sugar Daddy/eine Sugar Mama sein ?"
+    },
+    {
+        "english": "Who will have a sugar daddy/mommy ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer wird einen Sugar Daddy/eine Sugar Mama haben ?"
+    },
+    {
+        "english": "Who freaks out when there\u2019s a spider ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer hat die meiste Angst vor Spinnen ?"
+    },
+    {
+        "english": "Who keeps spilling their drinks ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer versch\u00fcttet st\u00e4ndig seine Getr\u00e4nke ?"
+    },
+    {
+        "english": "Who is the biggest drama queen ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer ist die gr\u00f6\u00dfte Drama-Queen ?"
+    },
+    {
+        "english": "Who is the most crafty ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer ist handwerklich am meisten begabt ?"
+    },
+    {
+        "english": "Who is into arts the most ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer interessiert sich am meisten f\u00fcr Kunst ?"
+    },
+    {
+        "english": "Who will spoil their child the most ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer wird seine Kinder am meisten verw\u00f6hnen ?"
+    },
+    {
+        "english": "Who is the biggest plant enthusiast ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer ist der/die gr\u00f6\u00dfte Pflanzenliebhaberin ?"
+    },
+    {
+        "english": "Who has the best dumper/dumpee success ratio ? (dumped more people than got dumped)",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer hat die h\u00f6chste Erfolgsquote beim Abservieren vs Verlassen werden?"
+    },
+    {
+        "english": "Who gets the most food stains while eating ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer bekommt die meisten Flecken beim Essen ?"
+    },
+    {
+        "english": "Who chooses fashion over comfort ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer verzichtet auf Bequemlichkeit f\u00fcr gutes Aussehen ?"
+    },
+    {
+        "english": "Whose head is always in the clouds ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer ist mit seinen/ihren Gedanken in den Wolken ?"
+    },
+    {
+        "english": "Who can\u2019t say no to tequila ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer kann zu Tequila nicht nein sagen ?"
+    },
+    {
+        "english": "Who would you rate 10/10 ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wen w\u00fcrdest du mit 10/10 bewerten ?"
+    },
+    {
+        "english": "Who lives in a mess ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wessen Wohnung ist am chaotischsten ?"
+    },
+    {
+        "english": "Who likes mystery ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer hegt die meisten Geheimnisse ?"
+    },
+    {
+        "english": "Who likes horror movies ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer schaut gerne Horrorfilme ?"
+    },
+    {
+        "english": "Who is most likely to become a life coach ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer wird am ehesten mal Motivations-Trainer ?"
+    },
+    {
+        "english": "Who feels inspired by motivational influencers ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer f\u00fchlt sich von Motivations-Influencern inspiriert ?"
+    },
+    {
+        "english": "Who has the weirdest background image on their phone ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer hat das komischste Hintergrundbild auf seinem Handy ?"
+    },
+    {
+        "english": "Who followed each fashion trend ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer ist jedem Modetrend gefolgt ?"
+    },
+    {
+        "english": "Who is the most judgemental ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer ist am voreingenommsten?"
+    },
+    {
+        "english": "Who is old-fashioned ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wen w\u00fcrdest als altmodisch bezeichnen ?"
+    },
+    {
+        "english": "Who has accomplished the most ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer hat bis jetzt am meisten im Leben erreicht ?"
+    },
+    {
+        "english": "Who believes in conspiracy theories ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer glaubt an Verschw\u00f6rungstheorien ?"
+    },
+    {
+        "english": "Who had the wildest vacations ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer hatte die wildesten Urlaube ?"
+    },
+    {
+        "english": "Who will gamble all of their money ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer verspielt durch sein/ihr ganzes Geld ?"
+    },
+    {
+        "english": "Who is afraid of getting older ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer hat Angst vorm \u00c4lterwerden ?"
+    },
+    {
+        "english": "Who read sexual literature before ?",
+        "category": "SAUCY",
+        "tag": "qp1",
+        "german": "Wer hat schon mal ein Erotikroman gelesen ?"
+    },
+    {
+        "english": "Who hates public transportation ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer kann \u00f6ffentliche Verkehrsmittel nicht ausstehen ?"
+    },
+    {
+        "english": "Who has the cleanest shoes ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer hat die saubersten Schuhe ?"
+    },
+    {
+        "english": "Who is most likely to have an affair with their boss for a better salary ?",
+        "category": "SAUCY",
+        "tag": "qp1",
+        "german": "Wer h\u00e4tte f\u00fcr ein besseres Gehalt am ehesten eine Aff\u00e4re mit seinem/ihrem Chef ?"
+    },
+    {
+        "english": "Who is always sleeping naked ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer schl\u00e4ft immer nackt ?"
+    },
+    {
+        "english": "Who is most likely to get a tramp stamp ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer w\u00fcrde sich am ehesten einen Arschgeweih stechen lassen ?"
+    },
+    {
+        "english": "Who would get into a fight at some media store on Black Friday ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer w\u00fcrde sich am Black Friday um den letzten Fernseher pr\u00fcgeln ?"
+    },
+    {
+        "english": "Who is always complaining ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer beschwert sich andauernd ?"
+    },
+    {
+        "english": "Who looks like they\u2019re high ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer sieht aus, als w\u00e4re er/sie high ?"
+    },
+    {
+        "english": "Who is most suited to work in Wall street ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer eignet sich am besten f\u00fcr eine Stelle an der Wall Street ?"
+    },
+    {
+        "english": "Who tips the best ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer gibt am meisten Trinkgeld ?"
+    },
+    {
+        "english": "Who tips the worst ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer gibt am wenigsten Trinkgeld ?"
+    },
+    {
+        "english": "Who can predict the best upcoming songs ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer entdeckt Songs bevor sie in die Charts kommen ?"
+    },
+    {
+        "english": "Who is the DJ of the group ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer ist der DJ der Gruppe ?"
+    },
+    {
+        "english": "Who is mentally the oldest ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer ist geistig am \u00e4ltesten ?"
+    },
+    {
+        "english": "Who never calls their grandparents ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer ruft nie seine Gro\u00dfeltern an ?"
+    },
+    {
+        "english": "Who makes the most spelling errors while texting ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wessen Nachrichten enthalten die meisten Rechtschreibfehler ?"
+    },
+    {
+        "english": "Who has the stupidest nickname ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer hat den schlechtesten Spitznamen ?"
+    },
+    {
+        "english": "Who can get the most free drinks in a club ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer w\u00fcrde im Club die meisten Getr\u00e4nke gespendet bekommen ?"
+    },
+    {
+        "english": "Who is still calling their mom to ask how to do the laundry ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer ruft immer noch seine Eltern, bez\u00fcglich Fragen zum W\u00e4schen waschen, an ?"
+    },
+    {
+        "english": "Who do you think is the biggest gossiper in the group ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer ist der/die gr\u00f6\u00dfte Schw\u00e4tzerin (Gossiper) in der Gruppe ?"
+    },
+    {
+        "english": "Who sleeps the funniest ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer schl\u00e4ft am komischsten ?"
+    },
+    {
+        "english": "Who would draw a dick on someone while they\u2019re sleeping ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer w\u00fcrde jemandem noch einen Penis ins Gesicht malen ?"
+    },
+    {
+        "english": "Who would try Kamasutra ?",
+        "category": "SAUCY",
+        "tag": "qp1",
+        "german": "Wer w\u00fcrde Kamasutra am liebsten ausprobieren ?"
+    },
+    {
+        "english": "With whom would you like to try Kamasutra ?",
+        "category": "SAUCY",
+        "tag": "qp1",
+        "german": "Mit wem w\u00fcrdest du gerne Kamasutra ausprobieren ?"
+    },
+    {
+        "english": "Who creates the most chat groups ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer erstellt die meisten Chat-Gruppen ?"
+    },
+    {
+        "english": "Who\u2018s the least active on social media ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer ist am wenigsten in sozialen Medien aktiv ?"
+    },
+    {
+        "english": "Who texts the most on chat groups ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer schreibt am meisten in Chatgruppen ?"
+    },
+    {
+        "english": "Who sends the most memes ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer verschickt die meisten Memes ?"
+    },
+    {
+        "english": "Who sends out the most pictures ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer verschickt die meisten Bilder ?"
+    },
+    {
+        "english": "Who\u2018s the most picky on dating apps ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer ist bei Dating-Apps am w\u00e4hlerischsten ?"
+    },
+    {
+        "english": "Who has been on the longest dry spell ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer hatte am l\u00e4ngsten keinen Sex mehr ?"
+    },
+    {
+        "english": "Who would organize the most romantic date ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer w\u00fcrde das romantischste Date organisieren ?"
+    },
+    {
+        "english": "Who would organize the worst date ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer w\u00fcrde das schlimmste Date organisieren ?"
+    },
+    {
+        "english": "Who won\u2019t have sex if they didn\u2019t shave in advance ?",
+        "category": "SAUCY",
+        "tag": "qp1",
+        "german": "Wer w\u00fcrde unrasiert keinen Sex haben ?"
+    },
+    {
+        "english": "Who\u2018s the most vain ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer ist am eitelsten ?"
+    },
+    {
+        "english": "Who\u2018s the fashion police of the group ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer ist die Fashion Police der Gruppe ?"
+    },
+    {
+        "english": "Who could make someone cry the fastest ?",
+        "category": "FRIENDLY",
+        "tag": "qp1",
+        "german": "Wer kann andere am schnellsten zum Weinen bringen ?"
+    }
+]

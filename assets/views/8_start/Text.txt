@@ -1,0 +1,31 @@
+English:
+
+Random
+100 random questions out of the question pool.
+
+Classic
+The classic game mode. 100 greatly chosen questions in a strict order. The best option for people who haven't played yet.
+
+Sexual
+A mode for all the horny people out there that want to know more about other people's sex life. This list contains ONLY sex-related questions.
+
+Friendly
+This mode removes all sex-related questions and forms a random list out of the remaining questions.
+
+Start (Button)
+--------------------
+
+German:
+Zufall
+100 zufällige Fragen aus dem Fragepool
+
+Klassik
+Der Klassik-Modus. 100 genau ausgesuchte Fragen in einer festgelegten Reihenfolge. Die beste Option für Leute, die noch nie gespielt haben.
+
+Feucht
+Dieser Modus erstellt eine Liste mit AUSSCHLIEßLICH Sex bezogenen Fragen für intimere Runden.
+
+Gemütlich
+Eine Liste bestehend aus 100 zufälligen, NICHT Sex bezogenen Fragen.
+
+Start (Button)

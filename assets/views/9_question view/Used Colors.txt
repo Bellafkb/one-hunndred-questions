@@ -1,0 +1,3 @@
+Next Question (Button): blue
+Sun (button to switch to dark mode): sun
+Background color (dark mode): darkGrey

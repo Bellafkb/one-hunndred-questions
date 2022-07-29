@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "project",
-    "slug": "project",
-    "version": "1.0.0",
+    "name": "one hundred questions",
+    "slug": "one-hundred-questions",
+    "version": "2.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -24,7 +24,9 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.b.bellafkir.one.hundred.questions",
+      "versionCode": 2
     },
     "web": {
       "favicon": "./assets/favicon.png"

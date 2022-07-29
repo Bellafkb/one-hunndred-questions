@@ -1,0 +1,13 @@
+English:
+Rules (title)
+Rule 1: The owner of the phone begins.
+Rule 2: Read the question on the screen out loud.
+Rule 3: Pass the phone to the person suiting the question.
+Rule 4: Chosen person takes over the phone, gets a penalty and forwards to the next question.
+
+German:
+Regeln (Titel)
+Regel 1: Der Besitzer des Handys fängt an.
+Regel 2: Lese die Frage auf dem Bildschirm laut vor.
+Regel 3: Gebe der jeweiligen Person das Handy, auf die die Frage (deiner Meinung nach) am meisten zutrifft.
+Regel 4: Der/Die Ausgewählte übernimmt das Handy, bekommt eine Strafe und setzt mit der nächsten Frage fort.

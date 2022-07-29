@@ -1,0 +1,7 @@
+English:
+Language
+
+German:
+Sprache
+
++ Deutsch, English (for the respective button)
