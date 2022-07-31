@@ -6,23 +6,29 @@ import {
   MaterialIcons,
   FontAwesome5,
 } from "@expo/vector-icons";
+import { shadow } from "../cssColors";
 
-export default function TutorialScreen({navigation}) {
+export default function TutorialScreen({ navigation }) {
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={{...styles.socialItem, marginTop: 20}}>
+      <TouchableOpacity
+        style={{ ...styles.socialItem, marginTop: 20, ...shadow }}
+      >
         <Entypo name="instagram" size={24} color="#444" />
         <Text style={styles.contentText}>Instagram</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.socialItem}>
+      <TouchableOpacity style={{ ...styles.socialItem, ...shadow }}>
         <AntDesign name="twitter" size={24} color="#444" />
         <Text style={styles.contentText}>Twitter</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.socialItem} onPress={()=> navigation.navigate("Acknowlegements")}>
-        <FontAwesome5 name="readme" size={24} color="#444"  />
+      <TouchableOpacity
+        style={{ ...styles.socialItem, ...shadow }}
+        onPress={() => navigation.navigate("Acknowlegements")}
+      >
+        <FontAwesome5 name="readme" size={24} color="#444" />
         <Text style={styles.contentText}>Acknowlegements</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.socialItem}>
+      <TouchableOpacity style={{ ...styles.socialItem, ...shadow }}>
         <MaterialIcons name="privacy-tip" size={24} color="#444" />
         <Text style={styles.contentText}>Privacy Policy</Text>
       </TouchableOpacity>
@@ -43,7 +49,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "flex-start",
     padding: 20,
-    borderWidth: 0.5,
     borderRadius: 10,
     marginVertical: 10,
     backgroundColor: "#fff",

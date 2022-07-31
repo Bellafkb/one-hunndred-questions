@@ -9,24 +9,24 @@ const QuestionsForm = ({ navigation }) => {
 
   return (
     <View style={styles.screenContainer}>
-      <View style={{ flex: 1 }}>
-        <Text>{JSON.stringify(userInfo)}</Text>
-      </View>
-
-      <Button
-        style={{ marginBottom: 40 }}
-        title="Logout"
-        onPress={() => {
-          AsyncStorage.removeItem("access_token")
-          AsyncStorage.removeItem("id_token")
-          AsyncStorage.removeItem("userInfo")
-          resetState()
-          Linking.openURL(
-            "https://one-hundred-questions.auth.eu-central-1.amazoncognito.com/logout?client_id=374fmh31lmpl8ae7gvfnto4mjp&response_type=token&scope=email+openid+profile&redirect_uri=exp://28-8xe.b-bellafkir.react-native-drinking-game.exp.direct:80"
-          );
-          navigation.navigate("Home")
+      <View
+        style={{
+          flexDirection: "row",
+          alignContent: "center",
+          alignItems: "center",
+          justifyContent: "center",
         }}
-      ></Button>
+      >
+        <View style={{ flexDirection: "column", margin: 20 }}>
+          <Text style={styles.value}>10</Text>
+          <Text style={styles.label}>Played</Text>
+        </View>
+
+        <View style={{ flexDirection: "column", margin: 20 }}>
+          <Text style={styles.value}>10</Text>
+          <Text style={styles.label}>Questions</Text>
+        </View>
+      </View>
     </View>
   );
 };
@@ -34,6 +34,8 @@ const QuestionsForm = ({ navigation }) => {
 export default QuestionsForm;
 
 const styles = StyleSheet.create({
+  label: { textAlign: "center", fontSize: 25, fontWeight: "bold" },
+  value: { textAlign: "center", fontSize: 25 },
   screenContainer: {
     flexDirection: "column",
     flex: 1,

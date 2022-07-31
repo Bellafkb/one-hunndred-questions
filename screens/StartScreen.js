@@ -11,7 +11,9 @@ export default function StartScreen({ navigation }) {
       style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
     >
       <TouchableOpacity onPress={() => navigation.navigate("Home")}>
-        <Text style={{ fontSize: 20, color: "#444" }}>Touch to start</Text>
+        <Text style={{ fontSize: 20, color: "#444", padding: 20 }}>
+          Touch to start
+        </Text>
       </TouchableOpacity>
     </ImageBackground>
   );

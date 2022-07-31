@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useMemo, useState } from "react";
 import { StyleSheet, View, TouchableOpacity, Image, Text } from "react-native";
-import { nextButtonColor } from "../cssColors";
+import { nextButtonColor, shadow } from "../cssColors";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { LocalizationContext } from "../context/LocalizationContext";
 
@@ -24,13 +24,8 @@ export default function TutorialScreen() {
               setLocale("de");
             }}
             style={{
-              alignItems: "center",
-              justifyContent: "center",
-              borderWidth: 1,
-              borderRadius: 400,
-              margin: 10,
-              width: 100,
-              height: 100,
+              ...styles.languageOption,
+              ...shadow,
             }}
           >
             <Image
@@ -47,13 +42,8 @@ export default function TutorialScreen() {
               setLocale("en");
             }}
             style={{
-              alignItems: "center",
-              justifyContent: "center",
-              borderWidth: 1,
-              borderRadius: 400,
-              margin: 10,
-              width: 100,
-              height: 100,
+              ...styles.languageOption,
+              ...shadow,
             }}
           >
             <Image
@@ -107,5 +97,14 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: "bold",
     textAlign: "center",
+  },
+  languageOption: {
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 100,
+    margin: 10,
+    width: 100,
+    height: 100,
+    backgroundColor: "#fff",
   },
 });

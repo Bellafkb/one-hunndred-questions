@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
 import SelectGameModeScreen from "./screens/SelectGameModeScreen";
 import MatchScreen from "./screens/MatchScreen";
 import HomeScreen from "./screens/HomeScreen";
@@ -16,26 +16,32 @@ import { NavigationContainer } from "@react-navigation/native";
 import QuestionsForm from "./screens/QuestionsForm";
 import ProfileScreen from "./screens/ProfileScreen";
 import Acknowlegements from "./screens/Acknowlegements";
+import ErrorBoundry from "react-native-error-boundary";
 
-import { AuthProvider } from "./context/AuthContext";
+import { AuthContext, AuthProvider } from "./context/AuthContext";
 import { LocalizationProvider } from "./context/LocalizationContext";
 import { QuestionProvider } from "./context/QuestionContext";
-const Stack = createNativeStackNavigator();
+import { AntDesign, Ionicons } from "@expo/vector-icons";
+import { useContext } from "react";
 
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <LocalizationProvider>
-      <AuthProvider>
-        <QuestionProvider>
-          <Navigation />
-        </QuestionProvider>
-      </AuthProvider>
-    </LocalizationProvider>
+    <ErrorBoundry>
+      <LocalizationProvider>
+        <AuthProvider>
+          <QuestionProvider>
+            <Navigation />
+          </QuestionProvider>
+        </AuthProvider>
+      </LocalizationProvider>
+    </ErrorBoundry>
   );
 }
 
 const Navigation = () => {
+  const { userInfo } = useContext(AuthContext);
   return (
     <NavigationContainer>
       <StatusBar />
@@ -68,7 +74,32 @@ const Navigation = () => {
         <Stack.Screen
           name="AddQuestionScreen"
           component={AddQuestionScreen}
-          options={{ title: "My questions" }}
+          options={({ navigation }) => ({
+            title: "My questions",
+            headerTitleStyle: { marginLeft: 60 },
+            headerRight: () => (
+              <TouchableOpacity
+                // style={styles.addButton}
+
+                onPress={() =>
+                  navigation.navigate(
+                    userInfo ? "QuestionsForm" : "LoginScreen"
+                  )
+                }
+              >
+                <Ionicons name="ios-add-outline" size={35} color="#444" />
+              </TouchableOpacity>
+            ),
+            headerLeft: () => (
+              <TouchableOpacity
+                // style={styles.addButton}
+
+                onPress={() => navigation.navigate("Home")}
+              >
+                <AntDesign name="arrowleft" size={25} color="black" />
+              </TouchableOpacity>
+            ),
+          })}
         />
         <Stack.Screen
           name="LanguageScreen"
@@ -94,7 +125,7 @@ const Navigation = () => {
         <Stack.Screen
           name="ProfileScreen"
           component={ProfileScreen}
-          options={{ title: "Create a question" }}
+          options={{ title: "Profile" }}
         />
         <Stack.Screen
           name="Acknowlegements"
@@ -110,12 +141,3 @@ const Navigation = () => {
     </NavigationContainer>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});

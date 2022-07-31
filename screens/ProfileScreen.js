@@ -1,9 +1,11 @@
 import { Button, Image, Linking, StyleSheet, Text, View } from "react-native";
 import React, { useContext } from "react";
-
 import { AuthContext } from "../context/AuthContext";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { Entypo, FontAwesome, MaterialIcons } from "@expo/vector-icons";
+import { FontAwesome, MaterialIcons } from "@expo/vector-icons";
+import { shadow } from "../cssColors";
+import { config, ENV } from "../config";
+import { env } from "@env";
 
 const ProfileScreen = ({ navigation }) => {
   const { userInfo, resetState } = useContext(AuthContext);
@@ -18,13 +20,29 @@ const ProfileScreen = ({ navigation }) => {
             marginTop: 30,
           }}
         >
-          <Image
-            source={{
-              uri: `https://ui-avatars.com/api/?rounded=true&name=${userInfo.name}&background=#F2AD40&color=#fff&size=200`,
+          <View
+            style={{
+              borderRadius: 110,
+              borderWidth: 5,
+              width: 110,
+              height: 110,
+              ...shadow,
+              alignSelf: "center",
             }}
-            resizeMode="contain"
-            style={{ width: 100, height: 100, alignSelf: "center" }}
-          />
+          >
+            <Image
+              source={{
+                uri: `https://ui-avatars.com/api/?rounded=true&name=${userInfo.name}&size=130`,
+              }}
+              resizeMode="contain"
+              style={{
+                width: 100,
+                height: 100,
+                alignSelf: "center",
+              }}
+            />
+          </View>
+
           <Text
             style={{
               alignSelf: "center",
@@ -35,6 +53,25 @@ const ProfileScreen = ({ navigation }) => {
           >
             {userInfo.name}
           </Text>
+        </View>
+
+        <View
+          style={{
+            flexDirection: "row",
+            alignContent: "center",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <View style={{ flexDirection: "column", margin: 20 }}>
+            <Text style={styles.value}>10</Text>
+            <Text style={styles.label}>Played</Text>
+          </View>
+
+          <View style={{ flexDirection: "column", margin: 20 }}>
+            <Text style={styles.value}>10</Text>
+            <Text style={styles.label}>Questions</Text>
+          </View>
         </View>
         <View
           style={{
@@ -87,8 +124,17 @@ const ProfileScreen = ({ navigation }) => {
           AsyncStorage.removeItem("id_token");
           AsyncStorage.removeItem("userInfo");
           resetState();
+          console.log(`https://one-hundred-questions.auth.eu-central-1.amazoncognito.com/logout?client_id=${
+            config().client_id
+          }&response_type=token&scope=email+openid+profile&redirect_uri=${
+            config().login_callback
+          }&logout_uri=${config().logout_callback}`)
           Linking.openURL(
-            "https://one-hundred-questions.auth.eu-central-1.amazoncognito.com/logout?client_id=374fmh31lmpl8ae7gvfnto4mjp&response_type=token&scope=email+openid+profile&redirect_uri=exp://exp.host/@b.bellafkir/100-questions&logout_uri=exp://exp.host/@b.bellafkir/100-questions"
+            `https://one-hundred-questions.auth.eu-central-1.amazoncognito.com/logout?client_id=${
+              config().client_id
+            }&response_type=token&scope=email+openid+profile&redirect_uri=${
+              config().login_callback
+            }&logout_uri=${config().logout_callback}`
           );
           navigation.navigate("Home");
         }}
@@ -117,4 +163,11 @@ const styles = StyleSheet.create({
     height: 200,
     justifyContent: "flex-start",
   },
+  label: {
+    textAlign: "center",
+    fontSize: 20,
+    fontWeight: "bold",
+    color: "grey",
+  },
+  value: { textAlign: "center", fontSize: 20, color: "grey" },
 });

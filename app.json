@@ -2,12 +2,13 @@
   "expo": {
     "name": "one hundred questions",
     "slug": "one-hundred-questions",
-    "version": "2.0.0",
+    "version": "10.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/app_icon/appLogo100Q_512.png",
     "userInterfaceStyle": "light",
+    "scheme": "onehundredquestions",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/views/1_intro_screen/imgs/intro.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -26,7 +27,7 @@
         "backgroundColor": "#FFFFFF"
       },
       "package": "com.b.bellafkir.one.hundred.questions",
-      "versionCode": 2
+      "versionCode": 10
     },
     "web": {
       "favicon": "./assets/favicon.png"

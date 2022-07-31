@@ -1,7 +1,6 @@
 export const nextButtonColor = "#334CA8";
 
 export const shadow = {
-  borderRadius: 10,
   shadowColor: "#000",
   shadowOffset: {
     width: 0,

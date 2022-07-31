@@ -29,15 +29,9 @@ export default function QuestionsList({ navigation }) {
   return (
     <View style={styles.container}>
       {isLoading && <Spinner visible={true} animation="none" />}
-      {/* {!(questions || isLoading) && (
-        <View style={styles.bot}>
-          <Text style={{ textAlign: "center", fontSize: 20, color: "#444" }}>
-            no questions created yet
-          </Text>
-        </View>
-      )} */}
+
       {questions && (
-        <ScrollView style={{ width: "100%", padding: 14 }}>
+        <ScrollView style={{ width: "100%", padding: 14, marginBottom: 20 }}>
           {questions.map((item, key) => (
             <View style={styles.message} key={key}>
               <Text style={{ color: "#0e566c" }}>
@@ -50,22 +44,6 @@ export default function QuestionsList({ navigation }) {
           ))}
         </ScrollView>
       )}
-      <View
-        style={{
-          width: "100%",
-          flexDirection: "row",
-          justifyContent: "flex-end",
-        }}
-      >
-        <TouchableOpacity
-          style={styles.addButton}
-          onPress={() =>
-            navigation.navigate(userInfo ? "QuestionsForm" : "LoginScreen")
-          }
-        >
-          <Ionicons name="ios-add-outline" size={30} color="#fff" />
-        </TouchableOpacity>
-      </View>
     </View>
   );
 }

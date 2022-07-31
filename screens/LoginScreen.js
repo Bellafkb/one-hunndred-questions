@@ -6,30 +6,34 @@ import * as Linking from "expo-linking";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import jwt_decode from "jwt-decode";
 import { AuthContext } from "../context/AuthContext";
+import { config, ENV } from "../config";
+import { env } from "@env";
+
 export default function TutorialScreen({ navigation }) {
   const { isLoggedIn } = useContext(AuthContext);
 
-  const [data, setData] = useState(null);
   const handleDeepLink = (event) => {
     let data = Linking.parse(event.url.replace("#", "?"));
     const { access_token, id_token } = data.queryParams;
-    setData({ access_token, id_token });
-    AsyncStorage.setItem("access_token", access_token);
+    
+    if (access_token && id_token) {
+      AsyncStorage.setItem("access_token", access_token);
     AsyncStorage.setItem("id_token", id_token);
     console.log(jwt_decode(id_token));
 
     AsyncStorage.setItem("userInfo", JSON.stringify(jwt_decode(id_token)));
     isLoggedIn();
-    if (access_token && id_token) {
-      navigation.navigate("QuestionsForm");
+      navigation.navigate("AddQuestionScreen");
     }
   };
+
   useEffect(() => {
     Linking.addEventListener("url", handleDeepLink);
     return () => {
       Linking.removeEventListener("url");
     };
   }, []);
+
   return (
     <View style={styles.container}>
       <Message
@@ -49,7 +53,11 @@ export default function TutorialScreen({ navigation }) {
         style={{ ...styles.socialItem, backgroundColor: "#4E7BE1" }}
         onPress={() =>
           Linking.openURL(
-            "https://one-hundred-questions.auth.eu-central-1.amazoncognito.com/oauth2/authorize?identity_provider=Google&redirect_uri=exp://exp.host/@b.bellafkir/100-questions&response_type=TOKEN&client_id=374fmh31lmpl8ae7gvfnto4mjp&scope=email openid profile"
+            `https://one-hundred-questions.auth.eu-central-1.amazoncognito.com/oauth2/authorize?identity_provider=Google&redirect_uri=${
+              config().login_callback
+            }&response_type=TOKEN&client_id=${
+              config().client_id
+            }&scope=email openid profile`
           )
         }
       >

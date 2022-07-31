@@ -1,10 +1,15 @@
 import React, { useContext, useEffect, useState } from "react";
 import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
 import { nextButtonColor, shadow } from "../cssColors";
-import { Entypo, FontAwesome5 } from "@expo/vector-icons";
-import AsyncStorage from "@react-native-async-storage/async-storage";
+import {
+  Entypo,
+  FontAwesome5,
+  MaterialCommunityIcons,
+} from "@expo/vector-icons";
 import { AuthContext } from "../context/AuthContext";
 import { LocalizationContext } from "../context/LocalizationContext";
+import { ENV } from "../config";
+import { env } from "@env";
 
 const drawings = [
   {
@@ -65,7 +70,7 @@ const drawings = [
   },
 ];
 
-export default function MatchScreen({ navigation }) {
+export default MatchScreen = ({ navigation }) => {
   const create_icon = require("../assets/views/2_main_menu/imgs/buttons/create.png");
   const language_icon = require("../assets/views/2_main_menu/imgs/buttons/language.png");
 
@@ -92,27 +97,37 @@ export default function MatchScreen({ navigation }) {
               alignItems: "center",
               alignContent: "center",
               justifyContent: "center",
+              ...shadow,
             }}
             onPress={() => navigation.navigate("ProfileScreen")}
           >
             <Image
               source={{
-                uri: `https://ui-avatars.com/api/?rounded=true&name=${userInfo.name}&background=#F2AD40&color=#fff`,
+                uri: `https://ui-avatars.com/api/?rounded=true&name=${userInfo.name}&size=130`,
               }}
               resizeMode="contain"
               style={{ width: 40, height: 40 }}
             />
           </TouchableOpacity>
         ) : (
-          <TouchableOpacity onPress={() => navigation.navigate("LoginScreen")}>
-            <FontAwesome5
-              name="user-circle"
-              size={40}
-              color="#444"
-              style={{ marginTop: 20 }}
-            />
+          <TouchableOpacity
+            onPress={() => navigation.navigate("LoginScreen")}
+            style={{
+              borderRadius: 40,
+              height: 40,
+              width: 40,
+              backgroundColor: "#fff",
+              marginTop: 20,
+              alignItems: "center",
+              alignContent: "center",
+              justifyContent: "center",
+              ...shadow,
+            }}
+          >
+            <MaterialCommunityIcons name="incognito" size={24} color="#444" />
           </TouchableOpacity>
         )}
+        <Text>{`---> ${env?env: "prod"}`}</Text>
 
         <TouchableOpacity
           style={{
@@ -121,8 +136,7 @@ export default function MatchScreen({ navigation }) {
             width: 40,
             backgroundColor: "#fff",
             marginTop: 20,
-
-            borderWidth: 0.5,
+            ...shadow,
             alignItems: "center",
             alignContent: "center",
             justifyContent: "center",
@@ -275,8 +289,6 @@ export default function MatchScreen({ navigation }) {
   );
 }
 
-
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -310,6 +322,7 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   bottomItem: {
+    backgroundColor: "#fff",
     flexDirection: "column",
     justifyContent: "center",
     alignContent: "center",
@@ -331,7 +344,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "flex-start",
+    justifyContent: "center",
     flexWrap: "wrap",
     height: "30%",
     width: "100%",
